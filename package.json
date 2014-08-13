@@ -1,0 +1,15 @@
+{
+  "name": "sudoku",
+  "version": "0.0.0",
+  "description": "sudoku!",
+  "main": "app.js",
+  "author": "Tim Killian",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "logfmt": "~1.1.2",
+    "express": "~4.8.2"
+  },
+  "engines": {
+  	"node": "0.10.21"
+  }
+}
