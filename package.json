@@ -7,9 +7,10 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "logfmt": "~1.1.2",
-    "express": "~4.8.2"
+    "express": "~4.8.2",
+    "jade": "~1.5.0"
   },
   "engines": {
-  	"node": "0.10.21"
+    "node": "0.10.21"
   }
 }
