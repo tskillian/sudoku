@@ -39,8 +39,8 @@ $(document).ready(function() {
 			event.preventDefault();
 			pressedKey = 'delete';
 		}
-
-		if (clickedBox && (pressedKey !== 0 || pressedKey === 'delete')) {
+		
+		if (clickedBox && (pressedKey > 0 || pressedKey === 'delete')) {
 			clickedBox.text(String.fromCharCode(event.which));
 		}
 	});
