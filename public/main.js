@@ -1,33 +1,47 @@
 $(document).ready(function() {
 	var clickedBox = null;
 
-	$('table').click(function(event) {
-		var tempClickedBox = $(event.target);
+	function resetClickedBox() {
 		if (clickedBox) {
-			// if the click is on the currently selected box, reset clickedBox
-			if (tempClickedBox.is(clickedBox)) {
-				clickedBox.removeClass('clicked');
-				clickedBox = null;
-			} else { // otherwise, change clicked element
-				clickedBox.removeClass('clicked');
-				tempClickedBox.addClass('clicked');
-				clickedBox = tempClickedBox;
-			}
+			clickedBox.removeClass('clicked');
+			clickedBox = null;
+		}
+	}
+
+	function setClickedBox(newClickedBox) {
+		if (clickedBox) {
+			clickedBox.removeClass('clicked');
+		}
+		newClickedBox.addClass('clicked');
+		clickedBox = newClickedBox;
+	}
+
+	$('table').click(function (event) {
+		event.stopPropagation();
+		var newClickedBox = $(event.target);
+		if (newClickedBox.is(clickedBox)) {
+			resetClickedBox();
 		} else {
-			tempClickedBox.addClass('clicked');
-			clickedBox = tempClickedBox;
+			setClickedBox(newClickedBox);
 		}
 	});
 
-	$(document).keydown(function(event) {
-		// to stop backspaces/deletes from navigating the browser
-		if (event.keyCode === 8 || event.keyCode === 46) { event.preventDefault(); }
+	$(document).click(function (event) {
+		resetClickedBox();
+	});
 
-		// pressedKey will either be a number or NaN
+	$(document).keydown(function (event) {
+		// pressedKey will either be a number or NaN here
 		var pressedKey = Number(String.fromCharCode(event.keyCode));
-		
-		if (clickedBox && pressedKey !== 0) {
+
+		// to stop backspaces/deletes from navigating the browser
+		if (event.keyCode === 8 || event.keyCode === 46) {
+			event.preventDefault();
+			pressedKey = 'delete';
+		}
+
+		if (clickedBox && (pressedKey !== 0 || pressedKey === 'delete')) {
 			clickedBox.text(String.fromCharCode(event.which));
-		};
-	})
+		}
+	});
 });
