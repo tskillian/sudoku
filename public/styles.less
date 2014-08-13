@@ -1,0 +1,41 @@
+html {
+	font-size: 16px;
+}
+
+body {
+	font-size: 62.5%; /* 1em = 10px */
+	margin: 0;
+}
+
+table {
+	font-size: 1.4em; /* 14px target / 10px context */
+	border-spacing: 0;
+	text-align: center;
+	margin: auto;
+}
+
+td {
+	width: 30px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+}
+
+tr :last-child {
+	border-right: 1px solid black;
+}
+
+tr :nth-child(3), tr :nth-child(6) {
+	border-right: 2px solid black;
+}
+
+.clicked {
+	background-color: cyan;
+}
+
+/* MEDIA QUERIES */
+
+/* iphone size */
+@media screen and (max-width: 320px) {
+
+}
