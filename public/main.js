@@ -18,11 +18,13 @@ $(document).ready(function() {
 
 	$('table').click(function (event) {
 		event.stopPropagation();
-		var newClickedBox = $(event.target);
-		if (newClickedBox.is(clickedBox)) {
-			resetClickedBox();
-		} else {
-			setClickedBox(newClickedBox);
+		if (event.target.localname === 'input') {
+			var newClickedBox = $(event.target);
+			if (newClickedBox.is(clickedBox)) {
+				resetClickedBox();
+			} else {
+				setClickedBox(newClickedBox);
+			}
 		}
 	});
 
@@ -30,7 +32,7 @@ $(document).ready(function() {
 		resetClickedBox();
 	});
 
-	$(document).keydown(function (event) {
+	$('document').keydown(function (event) {
 		// pressedKey will either be a number or NaN here
 		var pressedKey = Number(String.fromCharCode(event.keyCode));
 
