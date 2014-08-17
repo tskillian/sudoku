@@ -10,13 +10,14 @@ header {
   font-size: 2em;
 }
 table {
-  font-size: 1.4em;
+  font-size: 2em;
   border-spacing: 0;
   text-align: center;
   margin: auto;
 }
 td {
   width: 30px;
+  height: 30px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   border-left: 1px solid black;
@@ -32,6 +33,13 @@ input {
   margin: 0;
   width: 100%;
   height: 100%;
+  font-size: 1em;
+  color: transparent;
+  text-shadow: 0 0 0 #0000ff;
+  text-align: center;
+}
+input:focus {
+  outline: none;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -51,4 +59,14 @@ tr :nth-child(6) {
 }
 .clicked {
   background-color: cyan;
+}
+.static {
+  color: black;
+}
+.collision {
+  color: red;
+}
+.info {
+  text-align: center;
+  font-size: 2em;
 }

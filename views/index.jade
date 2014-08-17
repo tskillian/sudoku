@@ -10,145 +10,176 @@ html(lang="en")
 		header Play Sudoku!
 		table.sudoku
 			tr.row1
-				td.column1 5
-				td.column2 3
-				td.column3
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column4
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column5 7
-				td.column6
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column7
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column8
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column9
-					input(type="number", inputmode="numeric", max="9", min="1")
-			tr.row2
-				td.column1 6
+				td.column1
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="5")
 				td.column2
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="3")
 				td.column3
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column4 1
-				td.column5 9
-				td.column6 5
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column4
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column5
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="7")
+				td.column6
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column7
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column8
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column9
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+			tr.row2
+				td.column1
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="6")
+				td.column2
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column3
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column4
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="1")
+				td.column5
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="9")
+				td.column6
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="5")
+				td.column7
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column8
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column9
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 			tr.row3
 				td.column1
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column2 9
-				td.column3 8
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column2
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="9")
+				td.column3
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="8")
 				td.column4 
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column5 
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column6
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column7
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column8 6
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column8
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="6")
 				td.column9
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 			tr.row4
-				td.column1 8
+				td.column1
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="8")
 				td.column2
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column3
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column4
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column5 6
-				td.column6
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column7
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column8
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column9 3
-			tr.row5
-				td.column1 4
-				td.column2
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column3
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column4 8
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column5
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column6 3
-				td.column7
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column8
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column9 1
-			tr.row6
-				td.column1 7
-				td.column2
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column3
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column4
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column5 2
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="6")
 				td.column6
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column7
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column8
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column9 6
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column9
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="3")
+			tr.row5
+				td.column1
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="4")
+				td.column2
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column3
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column4
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="8")
+				td.column5
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column6
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="3")
+				td.column7
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column8
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column9
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="1")
+			tr.row6
+				td.column1
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="7")
+				td.column2
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column3
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column4
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column5
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="2")
+				td.column6
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column7
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column8
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column9
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="6")
 			tr.row7
 				td.column1
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column2 6
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column2
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="6")
 				td.column3
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column4
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column5
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column6
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column7 2
-				td.column8 8
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column7
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="2")
+				td.column8
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="8")
 				td.column9
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 			tr.row8
 				td.column1
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column2
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column3
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column4 4
-				td.column5 1
-				td.column6 9
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column4
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="4")
+				td.column5
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="1")
+				td.column6
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="9")
 				td.column7
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column8
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column9 5
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column9
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="5")
 			tr.row9
 				td.column1
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column2
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column3
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column4
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column5 8
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column5
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="8")
 				td.column6
-					input(type="number", inputmode="numeric", max="9", min="1")
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
 				td.column7
-					input(type="number", inputmode="numeric", max="9", min="1")
-				td.column8 7
-				td.column9 9
+					input.variableNum(type="number", inputmode="numeric", max="9", min="1")
+				td.column8
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="7")
+				td.column9
+					input.static(type="number", inputmode="numeric", max="9", min="1", value="9")
+		div.info
 		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
 		script(src="main.js")

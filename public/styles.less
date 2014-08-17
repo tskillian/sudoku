@@ -1,3 +1,6 @@
+@squareHeightAndWidth: 30px;
+@enteredNumberColor: blue;
+
 html {
 	font-size: 16px;
 }
@@ -13,14 +16,15 @@ header {
 }
 
 table {
-	font-size: 1.4em; // 14px target / 10px context
+	font-size: 2em; // 20px target / 10px context
 	border-spacing: 0;
 	text-align: center;
 	margin: auto;
 }
 
 td {
-	width: 30px;
+	width: @squareHeightAndWidth;
+	height: @squareHeightAndWidth;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 	border-left: 1px solid black;
@@ -37,6 +41,15 @@ input {
 	margin: 0;
 	width: 100%;
 	height: 100%;
+	font-size: 1em; // 20px target / 20px context
+
+	// this will effectively remove the blinking cursor of the input field
+	color: transparent;
+    text-shadow: 0 0 0 @enteredNumberColor;
+    text-align: center;
+    &:focus {
+        outline: none;
+    }
 }
 
 // remove spin buttons on input with type=number on webkit browsers
@@ -60,6 +73,19 @@ tr :nth-child(3), tr :nth-child(6) {
 
 .clicked {
 	background-color: cyan;
+}
+
+.static {
+	color: black;
+}
+
+.collision {
+	color: red;
+}
+
+.info {
+	text-align: center;
+	font-size: 2em; // 20px target / 10 px context
 }
 
 // MEDIA QUERIES
