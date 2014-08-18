@@ -1,8 +1,4 @@
 $(document).ready(function() {
-	// TODO:
-	// there's a bug where if you add a new collision, old collisions 'go away'
-	// 
-
 	var clickedBox = null;
 	// collisionMap is to hold any boxes where the numbers are not possible (i.e. two 9s in a row)
 	var collisionMap = {};
@@ -145,7 +141,7 @@ $(document).ready(function() {
 
 	$('input').keydown(function (event) {	
 		var target = $(event.target);
-		if (target.hasClass('variableNum')) {
+		if (target.hasClass('variableNum') && clickedBox) {
 			// prevent defalt on everything but backspace/delete so we can dictate what goes into the input field
 			if (event.keyCode !== 8 && event.keyCode !== 46) {
 				event.preventDefault();

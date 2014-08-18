@@ -60,10 +60,11 @@ tr :nth-child(6) {
   border-bottom: 2px solid black;
 }
 .clicked {
-  background-color: cyan;
+  background-color: #edfa5a;
 }
 .static {
-  color: black;
+  color: transparent;
+  text-shadow: 0 0 0 black;
 }
 .collision {
   color: red;
@@ -74,6 +75,6 @@ tr :nth-child(6) {
 }
 .info {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.6em;
   margin: 10px 0 0 0;
 }

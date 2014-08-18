@@ -1,5 +1,6 @@
 @squareHeightAndWidth: 30px;
 @enteredNumberColor: blue;
+@clickedElementBackgroundColor: #EDFA5A;
 
 html {
 	font-size: 16px;
@@ -74,11 +75,13 @@ tr :nth-child(3), tr :nth-child(6) {
 }
 
 .clicked {
-	background-color: cyan;
+	background-color: @clickedElementBackgroundColor;
 }
 
 .static {
-	color: black;
+	// remove blinking cursor
+	color: transparent;
+	text-shadow: 0 0 0 black;
 }
 
 .collision {
@@ -93,13 +96,6 @@ tr :nth-child(3), tr :nth-child(6) {
 
 .info {
 	text-align: center;
-	font-size: 2em; // 20px target / 10 px context
+	font-size: 1.6em; // 16px target / 10 px context
 	margin: 10px 0 0 0;
-}
-
-// MEDIA QUERIES
-
-// iphone size
-@media screen and (max-width: 320px) {
-
 }
