@@ -13,6 +13,7 @@ body {
 header {
 	text-align: center;
 	font-size: 2em; // 20px target / 10px context
+	margin: 0 0 10px 0;
 }
 
 table {
@@ -82,12 +83,18 @@ tr :nth-child(3), tr :nth-child(6) {
 
 .collision {
 	color: red;
+}
+
+.clicked.collision {
+	// remove blinking cursor
+	color: transparent;
 	text-shadow: 0 0 0 red;
 }
 
 .info {
 	text-align: center;
 	font-size: 2em; // 20px target / 10 px context
+	margin: 10px 0 0 0;
 }
 
 // MEDIA QUERIES

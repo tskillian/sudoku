@@ -8,6 +8,7 @@ body {
 header {
   text-align: center;
   font-size: 2em;
+  margin: 0 0 10px 0;
 }
 table {
   font-size: 2em;
@@ -66,9 +67,13 @@ tr :nth-child(6) {
 }
 .collision {
   color: red;
+}
+.clicked.collision {
+  color: transparent;
   text-shadow: 0 0 0 red;
 }
 .info {
   text-align: center;
   font-size: 2em;
+  margin: 10px 0 0 0;
 }

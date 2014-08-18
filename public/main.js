@@ -31,21 +31,19 @@ $(document).ready(function() {
 	}
 
 	function updateInfo() {
-		// console.log('numcollisions:', numberCollisionBoxes.length)
-		// console.log('numfilledinboxes', numFilledInBoxes);
-		// // TODO count filled in boxes continuously rather than all at each updateInfo invocation
-		// var numFilledInBoxes = 0;
-		// $('input').each(function (index, element) {
-		// 	if ($(element).val()) { numFilledInBoxes += 1; }
-		// });
-		// console.log(numFilledInBoxes)
-		// if (numberCollisionBoxes.length > 0) {
-		// 	$('.info').text('There are currently number collisions');
-		// } else if (numberCollisionBoxes.length === 0 && numFilledInBoxes === 81) {
-		// 	$('.info').text('Congratulations! You have successfully completed the puzzle!');
-		// } else {
-		// 	$('.info').text('');
-		// }
+		var numCollisions = Object.keys(collisionMap).length;
+		var numFilledInBoxes = 0;
+		$('input').each(function (index, element) {
+			if ($(element).val()) { numFilledInBoxes += 1; }
+		});
+		if (numCollisions > 0) {
+			console.log('collisions')
+			$('.info').text('There are currently number collisions');
+		} else if (numCollisions === 0 && numFilledInBoxes === 81) {
+			$('.info').text('Congratulations! You have successfully completed the puzzle!');
+		} else {
+			$('.info').text('');
+		}
 	}
 
 	function getCollisions(inputElement, number) {
@@ -84,7 +82,6 @@ $(document).ready(function() {
 			if (tempSubgridBox.val() == number && !tempSubgridBox.is(inputElement)) {
 				var tempId = tempSubgridBox.parent().attr('id');
 				if (!(tempId in collisionIdSet)) {
-					console.log('add subgrid')
 					tempSubgridBox.addClass('collision');
 					collisions.push(tempSubgridBox);
 					collisionIdSet[tempId] = true; // true is arbitrary
@@ -107,8 +104,6 @@ $(document).ready(function() {
 				// only remove collision class if collision element if its number of collisions is 0
 				if (idToNumCollisionsMap[collisionElementId] === 0) {
 					collisionElement.removeClass('collision');
-					console.log('reduce id collisions by 1:', idToNumCollisionsMap[id])
-					console.log(idToNumCollisionsMap)
 				}
 				
 			}
