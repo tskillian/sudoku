@@ -19,13 +19,6 @@ $(document).ready(function() {
 		clickedBox = newClickedBox;
 	}
 
-	function returnNumberCollisionBoxesToOriginalState() {
-		for (var i = 0; i < numberCollisionBoxes.length; i++) {
-			numberCollisionBoxes[i].removeClass('collision');
-		}
-		numberCollisionBoxes = [];
-	}
-
 	function updateInfo() {
 		var numCollisions = Object.keys(collisionMap).length;
 		var numFilledInBoxes = 0;

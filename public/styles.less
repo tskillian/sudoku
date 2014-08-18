@@ -1,9 +1,16 @@
 @squareHeightAndWidth: 30px;
-@enteredNumberColor: blue;
+@enteredNumberColor: #5367FC;
+@collisionColor: #FA5C43;
+@staticNumberColor: white;
+@textColor: white;
+@borderColor: white;
 @clickedElementBackgroundColor: #EDFA5A;
+@pageBackgroundColor: #192930;
 
 html {
 	font-size: 16px;
+	background-color: @pageBackgroundColor;
+	color: @textColor;
 }
 
 body {
@@ -27,9 +34,9 @@ table {
 td {
 	width: @squareHeightAndWidth;
 	height: @squareHeightAndWidth;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
+	border-top: 1px solid @borderColor;
+	border-bottom: 1px solid @borderColor;
+	border-left: 1px solid @borderColor;
 	padding: 0;
 }
 
@@ -37,6 +44,7 @@ input {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+	background-color: @pageBackgroundColor;
 	border-radius: 0;
 	border: 0;
 	padding: 0;
@@ -55,23 +63,16 @@ input {
     }
 }
 
-// remove spin buttons on input with type=number on webkit browsers
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0;
-}
-
 tr :last-child {
-	border-right: 1px solid black;
+	border-right: 1px solid @borderColor
 }
 
 tr :nth-child(3), tr :nth-child(6) {
-	border-right: 2px solid black;
+	border-right: 2px solid @borderColor;
 }
 
 .row3 td, .row6 td {
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid @borderColor;
 }
 
 .clicked {
@@ -81,11 +82,17 @@ tr :nth-child(3), tr :nth-child(6) {
 .static {
 	// remove blinking cursor
 	color: transparent;
-	text-shadow: 0 0 0 black;
+	text-shadow: 0 0 0 @staticNumberColor;
 }
 
 .collision {
 	color: red;
+}
+
+.static.collision {
+	// otherwise you get a strange 'glow' type affect
+	text-shadow: none;
+	color: @staticNumberColor;
 }
 
 .clicked.collision {

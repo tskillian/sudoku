@@ -1,5 +1,7 @@
 html {
   font-size: 16px;
+  background-color: #192930;
+  color: #ffffff;
 }
 body {
   font-size: 62.5%;
@@ -19,15 +21,16 @@ table {
 td {
   width: 30px;
   height: 30px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
   padding: 0;
 }
 input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background-color: #192930;
   border-radius: 0;
   border: 0;
   padding: 0;
@@ -37,37 +40,36 @@ input {
   font-size: 1em;
   cursor: default;
   color: transparent;
-  text-shadow: 0 0 0 #0000ff;
+  text-shadow: 0 0 0 #5367fc;
   text-align: center;
 }
 input:focus {
   outline: none;
 }
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 tr :last-child {
-  border-right: 1px solid black;
+  border-right: 1px solid #ffffff;
 }
 tr :nth-child(3),
 tr :nth-child(6) {
-  border-right: 2px solid black;
+  border-right: 2px solid #ffffff;
 }
 .row3 td,
 .row6 td {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #ffffff;
 }
 .clicked {
   background-color: #edfa5a;
 }
 .static {
   color: transparent;
-  text-shadow: 0 0 0 black;
+  text-shadow: 0 0 0 #ffffff;
 }
 .collision {
   color: red;
+}
+.static.collision {
+  text-shadow: none;
+  color: #ffffff;
 }
 .clicked.collision {
   color: transparent;
