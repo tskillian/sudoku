@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	var clickedBox = null;
-	// collisionMap is to hold any boxes where the numbers are not possible (i.e. two 9s in a row)
+	// collisionMap is to hold any boxes where the numbers are not possible (i.e. two 9s in a row). The keys will be input box IDs
 	var collisionMap = {};
-	var idToNumCollisionsMap = {};
+	var idToNumCollisionsMap = {}; // to count how many collisions any given number has, so we know when it's safe to return an element to its default state
 
 	function resetClickedBox() {
 		if (clickedBox) {
@@ -19,6 +19,7 @@ $(document).ready(function() {
 		clickedBox = newClickedBox;
 	}
 
+	// helper function to update the informational text below the puzzle
 	function updateInfo() {
 		var numCollisions = Object.keys(collisionMap).length;
 		var numFilledInBoxes = 0;
@@ -35,6 +36,7 @@ $(document).ready(function() {
 		}
 	}
 
+	// helper function to find and return all unique elements that a given element collides with
 	function getCollisions(inputElement, number) {
 		var parent = inputElement.parent();
 		var parentClasses = parent.attr('class').split(' '); // first class is column, second is subgrid
@@ -81,6 +83,7 @@ $(document).ready(function() {
 		return collisions;
 	}
 
+	// This function updates both collisionMap and idToNumCollisionsMap based on an element that just had a number get updated
 	function updateNumberCollisionBoxes(inputElement, number) {
 		var id = inputElement.parent().attr('id');
 		// if there are collisions for this element, clear them
@@ -118,6 +121,7 @@ $(document).ready(function() {
 
 	$('table').click(function (event) {
 		var newClickedBox = $(event.target);
+		// we only care if the click was on a box that the user can update
 		if (newClickedBox.hasClass('variableNum')) {
 			event.stopPropagation();
 			if (newClickedBox.is(clickedBox)) {
@@ -136,12 +140,12 @@ $(document).ready(function() {
 		var target = $(event.target);
 		if (target.hasClass('variableNum') && clickedBox) {
 			// prevent defalt on everything but backspace/delete so we can dictate what goes into the input field
-			if (event.keyCode !== 8 && event.keyCode !== 46) {
-				event.preventDefault();
-			} else {
-				// still need to update collision boxes if the user removes a number with backspace/delete
+			if (event.keyCode === 8 && event.keyCode === 46) {
+				// update collision boxes if the user removes a number with backspace/delete
 				updateNumberCollisionBoxes(clickedBox, null);
 				updateInfo();
+			} else {
+				event.preventDefault();
 			}
 
 			// pressedKey will either be a number or NaN here
